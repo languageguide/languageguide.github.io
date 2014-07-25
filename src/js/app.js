@@ -4,12 +4,14 @@
 
 	define([
 		'jquery',
+		'backbone',
+		'marionette',
 		'popcorn'
-	], function ($) {
+	], function ($, Backbone, Marionette) {
 
 		return {
 			start: function () {
-				console.log(this, $, Popcorn);
+				console.log(this, $, Popcorn, Backbone, Marionette);
 			}
 		};
 	});
