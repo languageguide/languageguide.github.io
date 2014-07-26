@@ -27,16 +27,24 @@
 
 	require([
 		'app',
+		'router',
+		'routerController',
 		'mustache',
 		'marionette'
-	], function (app, Mustache, Marionette) {
+	], function (app, Router, routerController, Mustache, Marionette) {
 
 		Marionette.Renderer.render = function(template, data){
 			return Mustache.to_html(template, data);
 		}
 
-		app.start();
+		app.addInitializer(function() {
+			app.Router = new Router({
+				controller: routerController
+			});
+			return app.vent.trigger("routing:started");
+		});
 
+		app.start();
 	});
 
 })();
