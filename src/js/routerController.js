@@ -12,11 +12,14 @@
 
 			doBook: function (title) {
 				console.log('book title', title, app);
-				app.mainRegion.show(new MainView({
-					model: new Backbone.Model({
-						'audio-src': 'src/audio/01.mp3'
-					})
-				}));
+				require(['text!../media/text/' + title + '.htm'], function(textBook) {
+					app.mainRegion.show(new MainView({
+						model: new Backbone.Model({
+							'audio-book': 'src/media/audio/' + title + '.mp3',
+							'text-book': textBook
+						})
+					}));
+				});
 			},
 
 			doHome: function () {
