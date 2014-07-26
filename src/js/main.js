@@ -31,9 +31,9 @@
 		'marionette'
 	], function (app, Mustache) {
 
-	Marionette.Renderer.render = function(template, data){
-		return Mustache.to_html(template, data);
-	}
+		Marionette.Renderer.render = function(template, data){
+			return Mustache.to_html(template, data);
+		}
 
 		app.start();
 
