@@ -11,7 +11,9 @@
 			popcorn: vendor_dir + 'popcorn-complete.min',
 			underscore: vendor_dir + 'underscore-min',
 			backbone: vendor_dir + 'backbone-min',
-			marionette: vendor_dir + 'backbone.marionette.min'
+			marionette: vendor_dir + 'backbone.marionette.min',
+			text: vendor_dir + 'text',
+			mustache: vendor_dir + 'mustache.min'
 		},
 		shim: {
 			backbone: {
@@ -24,8 +26,14 @@
 	});
 
 	require([
-		'app'
-	], function (app) {
+		'app',
+		'mustache',
+		'marionette'
+	], function (app, Mustache, Marionette) {
+
+		Marionette.Renderer.render = function(template, data){
+			return Mustache.to_html(template, data);
+		}
 
 		app.start();
 
