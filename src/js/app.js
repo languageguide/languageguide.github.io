@@ -6,9 +6,8 @@
 		'jquery',
 		'backbone',
 		'marionette',
-		'views/mainView',
 		'popcorn'
-	], function ($, Backbone, Marionette, MainView) {
+	], function ($, Backbone, Marionette) {
 
 		var app = new Marionette.Application();
 
