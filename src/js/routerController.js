@@ -5,8 +5,9 @@
 	define([
 		'backbone',
 		'app',
-		'views/mainView'
-	], function (Backbone, app, MainView) {
+		'views/mainView',
+		'collections/books'
+	], function (Backbone, app, MainView, BooksCollection) {
 
 		return  {
 
@@ -23,7 +24,12 @@
 			},
 
 			doHome: function () {
-				console.log('do home', app);
+				app.books = new BooksCollection();
+				app.books.fetch({
+					success: function () {
+						console.log('do home', app, app.books);
+					}
+				});
 			}
 		};
 

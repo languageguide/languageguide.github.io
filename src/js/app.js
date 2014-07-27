@@ -18,7 +18,9 @@
 		});
 
 		app.vent.on('routing:started', function() {
-			Backbone.history.start();
+			Backbone.history.start({
+				pushState: false
+			});
 		});
 
 		return app;
