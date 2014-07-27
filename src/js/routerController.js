@@ -13,10 +13,10 @@
 
 			doBook: function (title) {
 				console.log('book title', title, app);
-				require(['text!../media/text/' + title + '.htm'], function(textBook) {
+				require(['text!../media/' + title + '.htm'], function(textBook) {
 					app.mainRegion.show(new MainView({
 						model: new Backbone.Model({
-							'audio-book': 'src/media/audio/' + title + '.mp3',
+							'audio-book': 'src/media/' + title + '.mp3',
 							'text-book': textBook
 						})
 					}));

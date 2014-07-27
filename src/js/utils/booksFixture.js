@@ -4,7 +4,7 @@ define([], function () {
 
     return [
         {
-            bookTitle: 'the-picture-of-dorian-gray'
+            bookTitle: 'The-Picture-of-Dorian-Gray'
         },
         {
             bookTitle: 'The-Fall-of-the-House-of-Usher'
