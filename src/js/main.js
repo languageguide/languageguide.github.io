@@ -13,7 +13,8 @@
 			backbone: vendor_dir + 'backbone-min',
 			marionette: vendor_dir + 'backbone.marionette.min',
 			text: vendor_dir + 'text',
-			mustache: vendor_dir + 'mustache.min'
+			mustache: vendor_dir + 'mustache.min',
+			localStorage: vendor_dir + 'backbone.localStorage-min'
 		},
 		shim: {
 			backbone: {
@@ -21,7 +22,8 @@
 			},
 			marionette: {
 				deps: ['backbone']
-			}
+			},
+			localStorage: ['backbone']
 		}
 	});
 

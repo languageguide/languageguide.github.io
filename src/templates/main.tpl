@@ -1,6 +1,6 @@
-<audio id="audio" src="{{ audio-src }}" controls>
+<audio id="audio" src="{{ audio-book }}" controls>
 </audio>
 
 <div id="text">
-   {{ text }}
+   {{ text-book }}
 </div>​

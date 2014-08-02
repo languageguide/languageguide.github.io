@@ -5,22 +5,31 @@
 	define([
 		'backbone',
 		'app',
-		'views/mainView'
-	], function (Backbone, app, MainView) {
+		'views/mainView',
+		'collections/books'
+	], function (Backbone, app, MainView, BooksCollection) {
 
 		return  {
 
 			doBook: function (title) {
 				console.log('book title', title, app);
-				app.mainRegion.show(new MainView({
-					model: new Backbone.Model({
-						'audio-src': 'src/audio/01.mp3'
-					})
-				}));
+				require(['text!../media/' + title + '.htm'], function(textBook) {
+					app.mainRegion.show(new MainView({
+						model: new Backbone.Model({
+							'audio-book': 'src/media/' + title + '.mp3',
+							'text-book': textBook
+						})
+					}));
+				});
 			},
 
 			doHome: function () {
-				console.log('do home', app);
+				app.books = new BooksCollection();
+				app.books.fetch({
+					success: function () {
+						console.log('do home', app, app.books);
+					}
+				});
 			}
 		};
 
