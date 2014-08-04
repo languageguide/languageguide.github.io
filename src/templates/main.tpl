@@ -2,5 +2,5 @@
 </audio>
 
 <div id="text">
-   {{ text-book }}
+   {{{ text-book }}}
 </div>​
