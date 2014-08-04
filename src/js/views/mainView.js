@@ -5,8 +5,9 @@
 	define([
 		'marionette',
 		'underscore',
+		'jquery',
 		'text!../../templates/main.tpl',
-	], function (Marionette, _, MainTemplate) {
+	], function (Marionette, _, $, MainTemplate) {
 
 		return  Marionette.ItemView.extend({
 
@@ -32,12 +33,11 @@
 
 			popcornInit: function() {
 				this.pop = Popcorn(this.audioSelector);
-				// TODO use _ instead of $
-				$.each(this.getWordTimes(), this.setFootNote);
+				_.each(this.getWordTimes(), this.setFootNote);
 				this.setWordClick();
 			},
 
-			setFootNote: function (id, time) {
+			setFootNote: function (time, id) {
 				this.pop.footnote({
 					start: time.start,
 					end: time.end,
