@@ -5,8 +5,7 @@
 	define([
 		'jquery',
 		'backbone',
-		'marionette',
-		'popcorn'
+		'marionette'
 	], function ($, Backbone, Marionette) {
 
 		var app = new Marionette.Application();
