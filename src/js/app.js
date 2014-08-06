@@ -22,6 +22,10 @@
 			});
 		});
 
+		app.vent.on('audioLoaded', function (audioSelector) {
+			app.popcorn = Popcorn(audioSelector);
+		});
+
 		return app;
 	});
 })();
