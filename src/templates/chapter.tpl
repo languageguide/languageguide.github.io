@@ -2,5 +2,4 @@
 </audio>
 
 <div id="text">
-   {{ text-book }}
 </div>​

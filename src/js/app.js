@@ -5,8 +5,7 @@
 	define([
 		'jquery',
 		'backbone',
-		'marionette',
-		'popcorn'
+		'marionette'
 	], function ($, Backbone, Marionette) {
 
 		var app = new Marionette.Application();
@@ -21,6 +20,10 @@
 			Backbone.history.start({
 				pushState: false
 			});
+		});
+
+		app.vent.on('audioLoaded', function (audioSelector) {
+			app.popcorn = Popcorn(audioSelector);
 		});
 
 		return app;

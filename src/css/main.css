@@ -1,0 +1,7 @@
+.word {
+   color: blue;
+}
+.word:hover, .word.selected {
+    color: red;
+    cursor: pointer;
+}
