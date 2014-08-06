@@ -10,22 +10,21 @@
 		'collections/paragraphs'
 	], function (Backbone, app, ChapterView, BooksCollection, ParagraphsCollection) {
 
+		// TODO I should find a relation between BooksCollection and ParagraphsCollection
 		// TODO the collection should be not loaded here but by using events;
 		var collection = new ParagraphsCollection();
+		// TODO remove the localStorage clear command;
 		localStorage.clear();
 
 		return  {
 
 			doBook: function (title) {
-				require(['text!../media/' + title + '.htm'], function(textBook) {
-					app.mainRegion.show(new ChapterView({
-						model: new Backbone.Model({
-							'audio-book': 'src/media/' + title + '.mp3',
-							'text-book': textBook
-						}),
-						collection: collection
-					}));
-				});
+				app.mainRegion.show(new ChapterView({
+					model: new Backbone.Model({
+						'audio-book': 'src/media/' + title + '.mp3'
+					}),
+					collection: collection
+				}));
 			},
 
 			doHome: function () {
