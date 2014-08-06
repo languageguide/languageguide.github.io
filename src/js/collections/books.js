@@ -5,7 +5,7 @@
 	define([
 		'underscore',
 		'backbone',
-		'../utils/booksFixture',
+		'../utils/books.fixture',
 		'localStorage'
 	], function (_, Backbone, fixture) {
 

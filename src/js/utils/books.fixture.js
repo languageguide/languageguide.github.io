@@ -1,14 +1,16 @@
 /*global define*/
 define([], function () {
-    'use strict';
+'use strict';
 
-    return [
-        {
-            bookTitle: 'The-Picture-of-Dorian-Gray'
-        },
-        {
-            bookTitle: 'The-Fall-of-the-House-of-Usher'
-        }
-    ];
+	return [
+		{
+			id: 1,
+			title: 'The-Picture-of-Dorian-Gray'
+		},
+		{
+			id: 2,
+			title: 'The-Fall-of-the-House-of-Usher'
+		}
+	];
 
 });

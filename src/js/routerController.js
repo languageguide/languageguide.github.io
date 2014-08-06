@@ -6,9 +6,10 @@
 		'backbone',
 		'app',
 		'views/chapterView',
+		'views/bookListCompositeView',
 		'collections/books',
 		'collections/paragraphs'
-	], function (Backbone, app, ChapterView, BooksCollection, ParagraphsCollection) {
+	], function (Backbone, app, ChapterView, BookListCompositeView, BooksCollection, ParagraphsCollection) {
 
 		// TODO I should find a relation between BooksCollection and ParagraphsCollection
 		// TODO the collection should be not loaded here but by using events;
@@ -32,7 +33,9 @@
 				app.books.fetch({
 					// TODO add a new view to list all the titles
 					success: function () {
-						console.log('do home', app, app.books);
+						app.mainRegion.show(new BookListCompositeView({
+							collection: app.books
+						}));
 					}
 				});
 			}
